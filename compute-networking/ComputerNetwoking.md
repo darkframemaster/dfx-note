@@ -571,10 +571,13 @@ ICMP:互联网控制报文协议，被主机和路由器用来沟通网络层的
 
 ### 链路层提供的服务
 
-* 成帧（framing）
-* 链路接入
-* 可靠交付
-* 差错检测和纠正
+- 成帧（framing）
+- 链路接入
+- 可靠交付
+- 差错检测和纠正
+- 链路控制，链路聚合
+- 链路层流量控制
+- “冲突”检测：解决多路访问问题，即介质访问冲突问题，需要协同传输，避免多个端同时发送。
 
 链路层在何处实现：主题部分是在**网络适配器（network adapter）又叫做（网络接口卡（network interface card，NIC））**
 
@@ -583,12 +586,24 @@ ICMP:互联网控制报文协议，被主机和路由器用来沟通网络层的
 * **CRC**(Cyclic Redundancy Check）编码又叫多项式编码。
 
 ### 多路访问链路和协议
-**点对点链路（point-to-point link）**：
+**点对点链路（point-to-point link）**
 	
-- **点对点协议（point-to-point protocol）**
-- **高级数据链路公知（high-level data link control）**
+- **PPP(point-to-point protocol)**: 点对点协议
+- **HDLC(high-level data link control)**: 高级数据链路公知
 
 **多路访问问题(multiple access problem)**: 如何协调多个发送和接收结点对一个共享广播信道的访问。
+
+### 隧道基础
+隧道技术用于在两台计算机间通过Internet或者其他网络建立一条虚拟链路。
+
+隧道是在高层（或等同层）分组中携带低层数据，隧道转变了在头部中协议严格分层的思路，并允许形成**覆盖网络**。
+
+- VPN(virtual private network)
+    - 建立隧道的协议
+        - GRE : 通用路由封装
+        - PPTP : 点对点隧道协议
+        - L2TP : 第二层隧道协议
+
 
 #### 多路访问协议
 多路访问协议(multiple access protocol)，结点通过这些协议来规范它们在共享的广播信道上的传输行为。
