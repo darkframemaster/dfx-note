@@ -500,6 +500,11 @@ NAT 的几种类型
 ### ICMP协议
 ICMP:互联网控制报文协议，被主机和路由器用来沟通网络层的信息。最典型的用途是错误报告。
 
+### ARP协议
+ARP协议：地址解析协议，提供了一种在IPv4地址和各种网络技术使用的硬件地址之间的映射（通常是IP地址 -> MAC地址）。ARP仅用于IPv4，IPv6中使用邻居发现协议，它被合并到ICMPv6中。
+
+> RARP：ARP的反向映射
+
 ### 路由选择协议
 #### 路由算法的区分：
 - 一：
@@ -559,7 +564,7 @@ ICMP:互联网控制报文协议，被主机和路由器用来沟通网络层的
 - **network service model:**（网络服务模型）：
   - **因特网**
   - **恒定比特率（constant bit rate，CBR) ATM网络服务**
-  -  **可用比特率（available bit rate，ABR）ATM网络服务**
+  - **可用比特率（available bit rate，ABR）ATM网络服务**
 
 
 ## 链路层
